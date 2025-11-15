@@ -70,6 +70,7 @@ def translate_military_experience(mos: str, rank: str, experience_years: int) ->
         "91B": "Wheeled Vehicle Mechanic -> Automotive Technician, Diesel Mechanic, Fleet Manager",
         "25U": "Signal Support Systems Specialist -> IT Support Specialist, Network Administrator, Telecommunications Technician",
         "35F": "Intelligence Analyst -> Data Analyst, Business Intelligence Analyst, Market Research Analyst",
+        "68W": "Combat Medic -> Emergency Medical Technical (EMT), Paramedic, Licensed Practical Nurse (LPN), Medical Assistant",
     }
 
     translation = mos_to_civilian.get(
