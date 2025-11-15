@@ -7,3 +7,6 @@ python3 -m venv venv
 source venv/bin/activate && pip install google-cloud-aiplatform google-adk
 ```
 ## Go to vertex AI / Studio / Chat to begin.
+
+## Run the ADK agent with the command:
+```adk web app```
