@@ -8,11 +8,17 @@ from google.adk.agents import Agent
 
 load_dotenv()
 
+# Set the credentials environment variable BEFORE calling google.auth.default()
+credentials_path = os.getenv("SERVICE_ACCOUNT_KEY_FILE")
+if credentials_path:
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
+else:
+    print("Warning: SERVICE_ACCOUNT_KEY_FILE not found in .env file.")
+
 _, project_id = google.auth.default()
 os.environ.setdefault("GOOGLE_CLOUD_PROJECT", project_id)
 os.environ.setdefault("GOOGLE_CLOUD_LOCATION", "global")
 os.environ.setdefault("GOOGLE_GENAI_USE_VERTEXAI", "True")
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getenv("SERVICE_ACCOUNT_KEY_FILE")
 
 
 def get_weather(query: str) -> str:
